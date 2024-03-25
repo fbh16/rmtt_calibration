@@ -1,0 +1,12 @@
+<launch>
+  <!-- 配置相机输入 -->
+  <arg name="rmtt_body_link" default="rmtt_02" />
+  <param name="body_link" type="string" value="$(arg rmtt_body_link)" />
+  <param name="camera_link" type="string" value="$(arg rmtt_body_link)/camera_link" />
+
+  <!-- apriltag_ros continuous detection node (rmtt_02) -->
+  <node pkg="calibration" type="rt_calibration_node" name="$(arg rmtt_body_link)_rt_cal" output="screen" respawn="true">
+    
+  </node>
+  
+</launch>
